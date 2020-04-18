@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { MDBTable, MDBTableHead, MDBTableBody, MDBBtn } from 'mdbreact';
+import { MDBTable, MDBTableHead, MDBTableBody, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBContainer, MDBRow, MDBIcon } from 'mdbreact';
 import RoomService from '../services/RoomService';
 import GameRoom from './GameRoom';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
 const RoomsList = params => {
-    const history = useHistory();
+    //const history = useHistory();
     const [rooms, setRooms] = useState([]);
     const socket = params.socket
 
@@ -38,7 +38,9 @@ const RoomsList = params => {
          
             <div className="col-md-12 align-items-center justify-content-center">
                 <h4 className="text-center">Lista de Salas</h4>
-                <MDBTable>
+
+                
+                {/* <MDBTable>
                     <MDBTableHead color="primary-color" textWhite>
                         <tr>
                             <th>Id</th>
@@ -72,7 +74,7 @@ const RoomsList = params => {
                                                     const roomName = room.nome
                                                     console.log('Entrando na room: ', roomName)
                                                     socket.emit('joinRoom', roomName)
-                                                    history.push(`game-room/${room.nome}`);
+                                                    //history.push(`gameroom/${room.nome}`);
                                                 }}
                                             >
                                                 entrar 
@@ -83,7 +85,26 @@ const RoomsList = params => {
                                 ))
                             )}
                     </MDBTableBody>
-                </MDBTable>
+                </MDBTable> */}
+
+                {!rooms.data || rooms.data.length <= 0 ? (<span>dsds</span>) : (
+                    <MDBContainer>
+                        <MDBRow>
+                            {rooms.data.map(room => (
+                                <MDBCol md="3" className="mb-5">
+                                    <MDBCard style={{ width: "11rem" }} key={room.pk}>
+                                        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                        <MDBCardBody>
+                                        <MDBCardText className="text-left"><b>{room.pk}</b></MDBCardText>
+                                        <MDBCardText className="text-right"><MDBIcon icon="users"/> 0/{room.max_players}</MDBCardText>                            
+                                        <MDBBtn color="light-green" className="btn btn-primary">Entrar</MDBBtn>
+                                        </MDBCardBody>
+                                    </MDBCard>
+                                </MDBCol>
+                            ))}
+                        </MDBRow>
+                    </MDBContainer>
+                )}
 
             </div>
         </div>

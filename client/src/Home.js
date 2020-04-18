@@ -85,12 +85,13 @@ const Home = props => {
                         <RoomsList {...props} socket={socket} updateInRoom={updateInRoom} />
 
                     </div>
-
-                    <div>
-                        <GameRoom socket={socket} />
-                    </div>
                 </div>
             }
+            {!notInRoom && isSeted &&
+                <div>
+                        <GameRoom socket={socket} />
+                </div>
+            } 
 
 
             {notInRoom && !isSeted &&

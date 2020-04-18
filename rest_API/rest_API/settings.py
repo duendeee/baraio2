@@ -81,24 +81,24 @@ WSGI_APPLICATION = 'rest_API.wsgi.application'
 
 
 ## MINHAS CONFIGS PRA USAR O POSTGRESQL
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'baraiov1',
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': '@mancha26',                  # Not used with sqlite3.
-        'HOST': 'localhost',           # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                   # Set to empty string for default. Not used with sqlite3.
-   }
-}
-
-##CONFIG DEFAULT
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'baraiov1',
+#         'USER': 'postgres',                      # Not used with sqlite3.
+#         'PASSWORD': '@mancha26',                  # Not used with sqlite3.
+#         'HOST': 'localhost',           # Set to empty string for localhost. Not used with sqlite3.
+#         'PORT': '5432',                   # Set to empty string for default. Not used with sqlite3.
+#    }
 # }
+
+##CONFIG DEFAULT
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
