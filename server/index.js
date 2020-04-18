@@ -26,6 +26,13 @@ io.on("connection", socket => {
         io.emit('setUser', userName)
     })
 
+    socket.on('joinRoom', roomName => {
+        console.log(roomName)
+        socket.join(roomName)
+        console.log(`socket: ${id}, nickname: ${socket.userName}, room: ${roomName}`)
+        io.sockets.in(roomName).emit('ola', `vc esta na room ${roomName}`)
+    })
+
 
     socket.on("disconnect", () => {
         --totalUsers;

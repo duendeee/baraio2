@@ -16,7 +16,7 @@ class ModalUsersOnline extends Component {
     render() {
         return (
             <MDBContainer>
-                <MDBBtn color="green" onClick={this.toggle}>Usuários Online</MDBBtn>
+                <MDBBtn className="btn-light-green" onClick={this.toggle}>Usuários Online</MDBBtn>
                 <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                     <MDBModalHeader toggle={this.toggle}><strong>Usuários Online</strong></MDBModalHeader>
                     <MDBModalBody>

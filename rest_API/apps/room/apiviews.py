@@ -16,9 +16,9 @@ def rooms_list(request):
         data = []
         nextPage = 1
         previousPage = 1
-        rooms = Room.objects.get_queryset().order_by('id')
+        rooms = Room.objects.all()
         page = request.GET.get('page', 1)
-        paginator = Paginator(rooms, 5)
+        paginator = Paginator(rooms, 10)
         try:
             data = paginator.page(page)
         except PageNotAnInteger:

@@ -4,4 +4,4 @@ from .models import Room
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        fields = ('id', 'nome', 'max_players', 'criado_em', 'ativo')
+        fields = ('pk', 'nome', 'max_players', 'criado_em', 'ativo')

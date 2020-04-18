@@ -1,26 +1,29 @@
 import React, { Component, Fragment } from "react";
+
 import { BrowserRouter } from 'react-router-dom';
-import { Route, Link } from 'react-router-dom';
-import User from './User';
-import RoomCreateUpdate from './components/Room/RoomCreateUpdate';
-import RoomsList from './components/Room/RoomsList';
+import { Route } from 'react-router-dom';
+import Home from './Home';
+import GameRoom from './components/Room/GameRoom';
 
+const App = () => {
+  return (
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <BrowserRouter>
+    <Fragment>
+      <BrowserRouter>
 
-          <User />
+        <Route path="/" exact>
+          <Home />
+        </Route>
 
-          <Route path="/rooms/:pk"  component={RoomCreateUpdate} />
-                    <Route path="/rooms/" exact component={RoomCreateUpdate} />
-        </BrowserRouter>
-        </Fragment>
-    );
-  }
+        <Route path="/gameroom" >
+          <GameRoom />
+        </Route>
 
+      </BrowserRouter>
+    </Fragment>
+
+  );
 }
+
 
 export default App;
