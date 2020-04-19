@@ -1,0 +1,11 @@
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `players` int(4) NOT NULL DEFAULT 0,
+  `max_players` int(4) NOT NULL DEFAULT 2,
+  `status` int(4) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert into rooms values (null, 'sala 1', 0, 2, 0);
+insert into rooms values (null, 'sala 2', 0, 4, 0);

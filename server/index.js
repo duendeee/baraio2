@@ -1,3 +1,4 @@
+const db = require('./db') 
 const Koa = require('koa')
 const http = require('http')
 const socket = require('socket.io')

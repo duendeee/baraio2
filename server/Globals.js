@@ -1,0 +1,1 @@
+//global.listRooms = 0
